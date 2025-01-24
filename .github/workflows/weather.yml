@@ -1,0 +1,25 @@
+name: 'Weather Update'
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小时运行一次
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
+      - name: 'Set up Python'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: 'Install dependencies'
+        run: pip install requests beautifulsoup4
+      - name: 'Run weather script'
+        run: python weather.py
+      - name: 'Commit changes'
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add tenForecast.txt
+          git commit -m 'Update weather forecast'
+          git push
