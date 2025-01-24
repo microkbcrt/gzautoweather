@@ -2,6 +2,7 @@ name: 'Weather Update'
 on:
   schedule:
     - cron: '0 * * * *'  # 每小时运行一次
+  workflow_dispatch:  # 手动触发
 jobs:
   weather:
     runs-on: ubuntu-latest
