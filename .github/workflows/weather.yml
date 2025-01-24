@@ -23,4 +23,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add tenForecast.txt
           git commit -m 'Update weather forecast'
-          git push
+          git push origin HEAD:main  # 推送到 main 分支
