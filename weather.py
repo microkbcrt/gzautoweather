@@ -10,7 +10,7 @@ smtp_server = 'smtp.126.com'
 smtp_port = 465
 smtp_username = 'microkbcrt@126.com'  # 明文存储发件邮箱
 smtp_password = 'FCyttuJCVDNydXL8'  # 明文存储授权码
-recipient_emails = ['1811838153@qq.com', 'bawuban001@outlook.com']  # 收件人邮箱列表
+recipient_emails = ['1811838153@qq.com', '605936513@qq.com', 'bawuban001@outlook.com', '3034246584@qq.com', '2139693400@qq.com']  # 收件人邮箱列表
 
 def send_email(subject, body):
     msg = MIMEMultipart()
