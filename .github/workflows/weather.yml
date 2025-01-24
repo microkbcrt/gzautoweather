@@ -18,9 +18,11 @@ jobs:
       - name: 'Run weather script'
         run: python weather.py
       - name: 'Commit changes'
+        env:
+          ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add tenForecast.txt
           git commit -m 'Update weather forecast'
-          git push origin HEAD:main  # 推送到 main 分支
+          git push https://github-actions:${{ secrets.ACTIONS_TOKEN }}@github.com/microkbcrt/gzautoweather.git HEAD:main  # 推送到 main 分支
